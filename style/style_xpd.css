@@ -382,6 +382,7 @@ a{
   max-width: 500px;
   height: 10%;
   max-height: 500px;
+  padding-left: 55px;
   
   display: inline-block;
   background: transparent;
@@ -389,10 +390,11 @@ a{
 }
 
 .colourways-block p{
-  margin: 0 auto;
+  margin: 10 auto;
   color: white;
   padding-top: 0;
   font-family: Alte Bold;
+  font-size:large;
 }
 
 

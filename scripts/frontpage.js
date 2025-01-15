@@ -158,29 +158,39 @@ async function setupViewer2() {
     
 }
 function startTextureSwapping(manager, object) {
-    
     const textures = [
-        './assets/textures/WWW.png',
+        './assets/textures/CCC.png',
+        './assets/textures/PPP.png',
         './assets/textures/BBB.png',
         './assets/textures/GGG.png',
         './assets/textures/YYY.png',
+        './assets/textures/WWW.png',
+        './assets/textures/OOO.png',
+        './assets/textures/WBW.png',
+        './assets/textures/BWB.png',
+        './assets/textures/GWG.png',
+        './assets/textures/WGW.png',
+        './assets/textures/YWY.png',
+        './assets/textures/WYW.png',
+        './assets/textures/BWY.png',
+        './assets/textures/BWG.png',
+        './assets/textures/YYW.png',
+        './assets/textures/BBW.png',
+        './assets/textures/GGW.png'
     ];
 
-    let currentTextureIndex = 0;
-
     setInterval(async () => {
-        const nextTexturePath = textures[currentTextureIndex];
-        const textureLoader = new THREE.TextureLoader(); //load texture
-        const newTexture = await textureLoader.loadAsync(nextTexturePath);
+        const randomTextureIndex = Math.floor(Math.random() * textures.length);
+        const randomTexturePath = textures[randomTextureIndex];
 
-        if (object && object.material) { //swaps texture
-            object.material.map = newTexture;
+        const textureLoader = new THREE.TextureLoader();
+        const randomTexture = await textureLoader.loadAsync(randomTexturePath);
+
+        if (object && object.material) {
+            object.material.map = randomTexture;
             object.material.needsUpdate = true;
-            console.log(`Texture swapped to: ${nextTexturePath}`);
+            console.log(`Texture swapped to: ${randomTexturePath}`);
         }
-
-        // loop function
-        currentTextureIndex = (currentTextureIndex + 1) % textures.length;
     }, 3000); //3 seconds
 }
 setupViewer2();
@@ -200,7 +210,7 @@ async function setupViewer3() {
 
     const model = await manager.addFromPath("./assets/Sneakers2.glb");
     
-    const object = scene.getObjectByName('SHOE_LEFT');
+    const object = scene.getObjectByName('SHOE_MIDDLE');
     if (object) {
         console.log('Object loaded:', object);
     } else {
@@ -238,3 +248,57 @@ async function setupViewer3() {
     
 }
 setupViewer3();
+
+async function setupViewer4() {
+    const viewer = new ViewerApp({
+        canvas: document.getElementById('display3-canvas'),
+    });
+    await addBasePlugins(viewer);
+  
+    const manager = await viewer.getPlugin(AssetManagerPlugin);
+    const scene = viewer.scene;
+    
+    viewer.renderer.refreshPipeline();
+    //await viewer.setEnvironmentMap("./assets/autumn forest.hdr");
+    await viewer.load("./assets/Sneakers0.glb");
+
+    const model = await manager.addFromPath("./assets/Sneakers0.glb");
+    
+    const object = scene.getObjectByName('SHOE_RIGHT');
+    if (object) {
+        console.log('Object loaded:', object);
+    } else {
+        console.error('Object not found in the scene.');
+    }
+    const texture = manager.materials.findMaterialsByName('TEXTURE3')[0];
+    if(texture){
+      console.log("Found Texture");
+    }
+    else {
+      console.warn("Didn't find texture");
+    }
+    // Camera transform
+    viewer.scene.activeCamera.position = new Vector3(15, 5, 30);
+    viewer.scene.activeCamera.target = new Vector3(0, 0, 0);
+
+    // Camera options
+    const options = viewer.scene.activeCamera.getCameraOptions();
+    options.fov = 30;
+    viewer.scene.activeCamera.setCameraOptions(options);
+    
+    // Control options
+    const controls = viewer.scene.activeCamera.controls;
+    controls.autoRotate = true;
+    controls.autoRotateSpeed = 2.4;
+    controls.enableDamping = false;
+    controls.rotateSpeed = 2.0;
+    controls.enableZoom = false;
+    controls.enablePan = false;
+    controls.enableRotate = false;
+    controls.minDistance = 2;
+    controls.maxDistance = 8;
+
+    startTextureSwapping(manager, object);
+    
+}
+setupViewer4();
