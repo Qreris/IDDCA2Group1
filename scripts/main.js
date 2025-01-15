@@ -203,7 +203,7 @@ window.addEventListener("load", function() {
     function changeWholeShoeColor() {
       if (texture && texture.map && colourSelected == "W") {
         const textureLoader = new THREE.TextureLoader();
-        textureLoader.load('public/assets/textures/WWW.png', (texture) => {
+        textureLoader.load('./assets/textures/WWW.png', (texture) => {
         object.material.map = texture; 
         object.material.needsUpdate = true;
         upperColour = "W";
@@ -213,7 +213,7 @@ window.addEventListener("load", function() {
       }
       else if (texture && texture.map && colourSelected == "B") {
         const textureLoader = new THREE.TextureLoader();
-        textureLoader.load('public/assets/textures/BBB.png', (texture) => {
+        textureLoader.load('./assets/textures/BBB.png', (texture) => {
         object.material.map = texture; 
         object.material.needsUpdate = true; 
         upperColour = "B";
@@ -223,7 +223,7 @@ window.addEventListener("load", function() {
       }
       else if (texture && texture.map && colourSelected == "G") {
         const textureLoader = new THREE.TextureLoader();
-        textureLoader.load('public/assets/textures/GGG.png', (texture) => {
+        textureLoader.load('./assets/textures/GGG.png', (texture) => {
         object.material.map = texture; 
         object.material.needsUpdate = true; 
         upperColour = "G";
@@ -233,7 +233,7 @@ window.addEventListener("load", function() {
       }
       else if (texture && texture.map && colourSelected == "Y") {
         const textureLoader = new THREE.TextureLoader();
-        textureLoader.load('public/assets/textures/YYY.png', (texture) => {
+        textureLoader.load('./assets/textures/YYY.png', (texture) => {
         object.material.map = texture; 
         object.material.needsUpdate = true; 
         upperColour = "Y";
@@ -267,7 +267,7 @@ window.addEventListener("load", function() {
       
       if (textureToLoad) {
         const textureLoader = new THREE.TextureLoader();
-        textureLoader.load(`public/assets/textures/${textureToLoad}.png`, (texture) => {
+        textureLoader.load(`./assets/textures/${textureToLoad}.png`, (texture) => {
           if (object && object.material) {
             object.material.map = texture; 
             object.material.needsUpdate = true; 
