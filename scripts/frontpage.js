@@ -63,59 +63,59 @@ gsap.to(".banner", {
     }
 });
 
-//   async function setupViewer() {
-//     const viewer = new ViewerApp({
-//         canvas: document.getElementById('start3d-canvas'),
-//     });
+  async function setupViewer() {
+    const viewer = new ViewerApp({
+        canvas: document.getElementById('start3d-canvas'),
+    });
   
-//     await addBasePlugins(viewer);
+    await addBasePlugins(viewer);
   
-//     const manager = await viewer.getPlugin(AssetManagerPlugin);
-//     const scene = viewer.scene;
+    const manager = await viewer.getPlugin(AssetManagerPlugin);
+    const scene = viewer.scene;
     
-//     viewer.renderer.refreshPipeline();
-//     //await viewer.setEnvironmentMap("./assets/autumn forest.hdr");
-//     await viewer.load("./assets/Sneakers6.glb");
+    viewer.renderer.refreshPipeline();
+    //await viewer.setEnvironmentMap("./assets/autumn forest.hdr");
+    await viewer.load("./assets/Sneakers6.glb");
 
-//     const model = await manager.addFromPath("./assets/Sneakers6.glb");
+    const model = await manager.addFromPath("./assets/Sneakers6.glb");
     
-//     const object = scene.getObjectByName('SHOE_FINAL001');
-//     if (object) {
-//         console.log('Object loaded:', object);
-//     } else {
-//         console.error('Object not found in the scene.');
-//     }
+    const object = scene.getObjectByName('SHOE_FINAL001');
+    if (object) {
+        console.log('Object loaded:', object);
+    } else {
+        console.error('Object not found in the scene.');
+    }
   
     
-//     // Camera transform
-// 	  viewer.scene.activeCamera.position = new Vector3(15, 5, 30);
-// 	  viewer.scene.activeCamera.target = new Vector3(0, 0, 0);
+    // Camera transform
+	  viewer.scene.activeCamera.position = new Vector3(15, 5, 30);
+	  viewer.scene.activeCamera.target = new Vector3(0, 0, 0);
 
-//     // Camera options
-//     const options = viewer.scene.activeCamera.getCameraOptions();
-//     options.fov = 25;
-//     viewer.scene.activeCamera.setCameraOptions(options);
+    // Camera options
+    const options = viewer.scene.activeCamera.getCameraOptions();
+    options.fov = 25;
+    viewer.scene.activeCamera.setCameraOptions(options);
     
-//     // Control options
-//     const controls = viewer.scene.activeCamera.controls;
-//     controls.autoRotate = false;
-//     controls.autoRotateSpeed = 1;
-//     controls.enableDamping = true;
-//     controls.rotateSpeed = 2.0;
-//     controls.enableZoom = true;
-//     controls.enablePan = false;
-//     controls.minDistance = 2;
-//     controls.maxDistance = 8;
+    // Control options
+    const controls = viewer.scene.activeCamera.controls;
+    controls.autoRotate = false;
+    controls.autoRotateSpeed = 1;
+    controls.enableDamping = true;
+    controls.rotateSpeed = 2.0;
+    controls.enableZoom = true;
+    controls.enablePan = false;
+    controls.minDistance = 2;
+    controls.maxDistance = 8;
     
-//     const texture = manager.materials.findMaterialsByName('TEXTURE')[0];
-//     if(texture){
-//       console.log("Found Texture");
-//     }
-//     else {
-//       console.warn("Didn't find texture");
-//     }
-// }
-// setupViewer();
+    const texture = manager.materials.findMaterialsByName('TEXTURE')[0];
+    if(texture){
+      console.log("Found Texture");
+    }
+    else {
+      console.warn("Didn't find texture");
+    }
+}
+setupViewer();
 
 async function setupViewer2() {
     const viewer = new ViewerApp({
@@ -203,7 +203,7 @@ function startTextureSwapping(manager, object) {
             object.material.needsUpdate = true;
             console.log(`Texture swapped to: ${randomTexturePath}`);
         }
-    }, 3000); //3 seconds
+    }, 2000); //2 seconds
 }
 setupViewer2();
 
