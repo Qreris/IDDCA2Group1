@@ -1,0 +1,728 @@
+/*Overall website typeface*/
+@font-face { font-family: Alte Regular; src: url('AlteHaasGroteskRegular.ttf'); }
+@font-face { font-family: Alte Bold; src: url('AlteHaasGroteskBold.ttf'); }
+
+html {
+  scroll-behavior: smooth;
+  cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="%23FFD700" stroke="%23FFFFFF" stroke-width="1.5"></circle></svg>'), auto; 
+  overflow-x: hidden;
+}
+
+
+/*Nav bar*/
+#topnav{
+  width: 95%;
+  background-color: #1E2A78;
+  height: 64px;
+  border-radius: 32px;
+  position:fixed;
+  top: 0;
+  margin: 30px 30px;
+  display: inline-block;
+  z-index: 999;
+}
+
+#topnav div{
+  display:inline-block;
+  width: 33%;
+  font-family: Alte Regular;
+  color: white;
+  padding: 10px 0px;
+}
+
+#topnav a{
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 8px 0px;
+    font-size: 20px;
+    font-family: Alte Regular;
+    margin: 12px 40px;
+    display: inline;
+    cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="%23FFD700" stroke="%23FFFFFF" stroke-width="1.5"></circle></svg>'), auto;
+}
+
+#topnav .logo{
+  font-size: 28px;
+  color: white;
+  font-family: Alte Bold;
+  text-align: center;
+}
+
+#topnav .topnav-right{
+  text-align: right;
+}
+.navlink{
+  position: relative;
+	outline: none;
+	transition: 0.2s;
+}
+
+/*Nav bar animations*/
+.navlink::after {
+  background-color: white;
+	content: "";
+	position: absolute;
+	bottom: 5px;
+	height: 2px;
+	transition: 0.3s;
+  width: 0;
+  left: 50%;
+}
+
+.navlink:hover::after{
+    width: 100%; 
+    left: 0;
+}
+
+/*Global text styles*/
+h1{
+    color: #2d2d2d;
+    font-family: Alte Bold;
+    font-size: 80px;
+    margin: 10px 0px;
+  }
+
+h2{
+    font-family: Alte Bold;
+    font-size: 60px;
+}
+
+h3{
+    font-family: Alte Bold;
+    font-size: 33px;
+}
+
+p{
+  font-family: Alte Regular;
+  font-size: 16px;
+  line-height: 30px;
+  margin: 50px 0px;
+}
+
+/*Global button styling*/
+.button{
+  border: none;
+  border-radius: 50px;
+  padding: 8px 28px;
+  text-align: center;
+  font-size: 20px;
+  transition-duration: 0.4s;
+  cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="%23FFD700" stroke="%23FFFFFF" stroke-width="1.5"></circle></svg>'), auto;
+}
+
+a{
+  text-decoration: none;
+}
+
+/*Home Page*/
+
+/*Hero text*/
+.hero-container{
+    margin-bottom: 20px;
+  }
+.first-line,
+.second-line,
+.third-line{
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0.5rem auto;
+    font-family: Alte Bold;
+    font-size: 2rem;
+    margin: 0px 0px;
+    font-size: 80px
+  }
+.first-line{
+    border-right: 3px solid #ffffff;
+    animation: typewriter_1 1s steps(8) 1s 1 normal both,
+      first_cursor 900ms steps(8) 1.2;
+    animation-delay: 0s;
+  }
+.second-line{
+    border-right: 3px solid #ffffff;
+    animation: typewriter_2 1s steps(8) 1s 1 normal both,
+      second_cursor 900ms steps(8) 1.2;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+  }
+.third-line{
+    border-right: 3px solid #ffffff;
+    animation: typewriter_3 1s steps(13) 1s 1 normal both,
+    third_cursor 900ms steps(13) infinite;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+
+/*Hero text animation*/
+@keyframes first_cursor {
+    from {
+      border-right-color: #2d2d2d;
+    }
+    to {
+      border-right-color: rgba(255, 255, 255, 0.8);
+    }
+  }
+  
+@keyframes second_cursor{
+    from {
+      border-right-color: #2d2d2d;
+    }
+    to {
+      border-right-color: rgba(255, 255, 255, 0.8);
+    }
+  }
+
+@keyframes third_cursor{
+    from {
+      border-right-color: #2d2d2d;
+    }
+    to {
+      border-right-color: rgba(255, 255, 255, 0.8);
+    }
+  }
+  
+@keyframes typewriter_1 {
+    from {
+      width: 0;
+    }
+    to {
+      width: 21rem;
+    }
+  }
+  
+@keyframes typewriter_2 {
+    from {
+      width: 0;
+    }
+    to {
+      width: 17rem;
+    }
+  }
+@keyframes typewriter_3 {
+    from {
+      width: 0;
+    }
+    to {
+      width: 29rem;
+    }
+  }
+
+.herobutton{
+    background-color: #FF4C4C;
+    color: white;
+    margin: 16px 0px;
+    border: 2px solid #FF4C4C;
+}
+.herobutton:hover{
+    background-color: rgba(255, 255, 255, 0);
+    color: #FF4C4C;
+    border: 2px solid #FF4C4C;
+}
+.hero{
+    font-family: Alte Regular;
+    margin: 200px 65px;
+}
+
+#hero-text{
+    width: 600px;
+    display: inline-block;
+    margin: auto 0;
+}
+
+#hero-image{
+    width: 550px;
+    display: inline-block;
+    margin: auto 0;
+    margin-left: 200px;
+}
+
+#hero-png{
+  width: 100%;
+}
+
+/*Infinite scrolling text styling*/
+
+/* Container style */
+.scrolling-text-container {
+  background-color: #00C4B3;
+  overflow: hidden;
+  margin: 100px 0;
+}
+
+/* Inner container style */
+.scrolling-text-inner {
+  display: flex;
+  white-space: nowrap;
+  font-size: 20px;
+  font-family: Alte Regular;
+  font-weight: 600;
+  padding: 16px 0;
+  color: white;
+}
+
+/* Text style */
+.scrolling-text {
+  display: flex;
+}
+
+.scrolling-text-item {
+  padding: 0 65px;
+}
+
+/* Apply the animation to the text items */
+.scrolling-text-inner>div {
+  animation: var(--direction) var(--marquee-speed) linear infinite;
+}
+
+/* Pause the animation when a user hovers over it */
+.scrolling-text-container:hover .scrolling-text-inner>div {
+  animation-play-state: paused;
+}
+
+/* Setting the Animation using Keyframes */
+@keyframes scroll-left {
+  0% {
+      transform: translateX(0%);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+      transform: translateX(-100%);
+  }
+  100% {
+      transform: translateX(0%);
+  }
+}
+
+/*Banner picture section*/
+.banner{
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0), #2d2d2d), url(./shoe-banner.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+    color: white;
+    padding-top: 400px;
+    padding-bottom: 50px;
+    cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="%2300C4B3" stroke="%23FFFFFF" stroke-width="1.5"></circle></svg>'), auto;
+    }
+#banner-text{
+    text-align: center;
+    font-family: Alte Regular;
+}
+
+/*Unique selling points of the perfect pair*/
+
+/*Whole USP section*/
+.usp{
+  text-align: center;
+  margin: 100px 0;
+}
+
+.usp p{
+  margin: 30px 0;
+}
+
+/*USP 3 blocks section*/
+.usp-container{
+  width: 100%;
+  padding-top: 25px;
+}
+
+
+/*Individual USP blocks*/
+.usp-block{
+  width: 25%;
+  display: inline-block;
+  padding: 0 20px;
+  margin: 0 30px;
+}
+
+
+/*Styling for SVG for USP*/
+.usp-svg{
+  width: 80px;
+}
+
+
+/*Possible colourways*/
+
+/*Whole colourway section*/
+.colourways{
+  padding: 100px 65px;
+  background-color: #2d2d2d;
+  cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="%2300C4B3" stroke="%23FFFFFF" stroke-width="1.5"></circle></svg>'), auto;
+}
+
+.colourways-text{
+  width: 420px;
+  color: white;
+  text-align: left;
+  display: inline-block;
+  margin-right: 110px;
+  vertical-align: auto;
+}
+
+.colourways-container{
+  width: 830px;
+  display: inline-block;
+}
+
+.colourways-block{
+  width: 25%;
+  padding-left: 65px;
+  display: inline-block;
+  text-align: center;
+}
+
+.colourways-block p{
+  margin: 0 auto;
+  color: white;
+  padding-top: 0;
+  font-family: Alte Bold;
+}
+
+
+.colourways-png{
+  width: 100%;
+}
+
+
+
+/*CTA section*/
+.cta{
+    padding: 0 65px;
+    width: 90%;
+}
+
+.cta h2 {
+  margin-top: 0px;
+}
+
+#cta-img{
+    width: 680px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#cta-image{
+    width: 100%;
+    border-radius: 20px;
+}
+#cta-text{
+    font-family: Alte Regular;
+    margin-left: 130px;
+    width: 39%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.ctabutton{
+    margin: 30px 0;
+    background-color: #FF4C4C;
+    color: white;
+    margin: 16px 0px;
+    border: 2px solid #FF4C4C
+}
+.ctabutton:hover{
+    background-color: white;
+    color: #FF4C4C;
+    border: 2px solid #FF4C4C
+}
+
+
+/*Newsletter form*/
+#form-container{
+    font-family: Alte Regular;
+    font-size: 16px;
+    padding-bottom: 100px;
+    margin-top: 150px;
+}
+
+form{
+  width: 40%;
+  padding: 0 30%;
+  margin: auto auto;
+}
+.form-text{
+    text-align: center;
+    color: #2d2d2d;
+}
+
+.name{
+  width: 46%;
+  display: inline-block;
+}
+
+#last-name{
+  margin-left: 7%;
+}
+
+label{
+    line-height: 40px;
+    text-align: left;
+    color: #2d2d2d;
+}
+
+form ::placeholder{
+    color: rgba(0, 0, 0, 0.372);
+}
+
+input[type=text], select, textarea {
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 16px;
+    padding-left: 20px;
+    padding-right: 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 50px;
+    text-align: left;
+    border: 0;
+    margin-bottom: 20px;
+    background-color: #00000010;
+}
+
+input[type=text]:focus {
+  background-color: #ff4c4c26;
+}
+
+.newsletter{
+  font-size: 16px;
+  display: inline-block;
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 30px;
+}
+.newsletter input {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 21px;
+  width: 21px;
+  background-color: #00000010;
+  margin: 7px 0;
+  padding: 3px;
+  transition: 0.2s;
+}
+.newsletter input:checked ~ .checkmark:after {
+  display: block;
+}
+.newsletter input:checked ~ .checkmark {
+  background-color: #FF4C4C;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.newsletter input:checked ~ .checkmark:after {
+  display: block;
+}
+.newsletter .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+.submitbutton{
+    width: 100%;
+    background-color: #2d2d2d;
+    border: 2px solid #2d2d2d;
+    color: white;
+    font-size: 20px;
+    padding: 8px 28px;
+}
+.submitbutton:hover{
+    color: #2d2d2d;
+    border: 2px solid #2d2d2d;
+    background-color: rgba(255, 255, 255, 0);
+}
+footer{
+    padding-bottom: 30px;
+}
+#copyright{
+    text-align: left;
+    font-family: Alte Regular;
+    font-size: 16px;
+    margin: 30px 65px;
+    color: #2d2d2d;
+}
+
+/*Line*/
+hr{
+  margin: 30px 65px;
+  height: 2px;
+  border-width: 0;
+  background-color: #2d2d2d;
+}
+
+/*Customisation Page*/
+
+#customisation{
+  color: #2d2d2d;
+  font-family: Alte Regular;
+  margin: 150px 0;
+  width: 100%;
+}
+
+#customisation-header{
+  font-family: Alte Bold;
+  color: #2d2d2d;
+  font-size: 20px;
+  text-align: left;
+  margin-left: 65px;
+  display: inline;
+}
+
+.customisation-button{
+  font-size: 16px;
+  text-align: right;
+  margin-left: 420px;
+  display: inline;
+  color: white;
+}
+
+.dropbtn{
+  color: white;
+}
+
+.arrow{
+  stroke-width: 2.5px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  width: 24px;
+  height: 12px;
+  margin: 0 4px;
+  stroke: currentColor;
+}
+
+/*Interactive 3D model*/
+#customisation-3d{
+  margin: 370px 0;
+  text-align: center;
+}
+
+.dropdown:hover .dropbtn{
+  color: #2d2d2d;
+  background-color: white;
+  border: 2px solid #2d2d2d;
+}
+
+.dropbtn{
+  width: 540px;
+}
+
+.dropdown{
+  display: inline-block;
+  text-align: center;
+  width: 100%
+}
+
+.dropdown-content{
+  text-align: center;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 540px;
+  font-size: 16px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.dropdown-content a{
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #2d2d2d2a}
+
+.dropdown:hover .dropdown-content{
+  display: block;
+}
+
+
+/*Second CTA on customisation page*/
+.cta2{
+  text-align: center;
+  width: 100%;
+  background-color: #2d2d2d;
+  color: white;
+  padding: 100px 0;
+}
+
+.cta2 p{
+  width: 50%;
+  margin-top: 0px;
+  margin: 30px auto;
+}
+
+.cta2 h2{
+  margin-top: 0px;
+}
+
+.inspiration{
+  text-align: center;
+  width: 100%;
+  margin: 100px 0;
+}
+
+.inspiration h3{
+  margin-bottom: 0;
+}
+
+.inspiration p{
+  margin-top: 30px;
+}
+
+.inspiration-div{
+  width: 20%;
+  display: inline-block;
+}
+
+#inspiration-block{
+  width: 100%;
+}
+
+.inspiration-image {
+  width: 200px;
+}
+
+.inspiration-div p{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-family: Alte Bold;
+}
+
+.usp-block2{
+  background-color: #ffd90039;
+  border-radius: 20px;
+}
+
+#web-canvas {
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+#web-canvas-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
