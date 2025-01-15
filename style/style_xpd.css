@@ -373,15 +373,15 @@ a{
 }
 
 .colourways-container{
-  width: 1700px;
+  width: 1600px;
   display: inline-block;
 }
 
 .colourways-block{
   width: 60%;
-  max-width: 500px;
+  max-width: 400px;
   height: 10%;
-  max-height: 500px;
+  max-height: 400px;
   padding-left: 55px;
   
   display: inline-block;

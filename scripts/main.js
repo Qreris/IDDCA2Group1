@@ -22,7 +22,40 @@ import {
 
 
   gsap.registerPlugin(ScrollTrigger);
-  console.log("Hello");
+
+
+window.addEventListener("load", function() {
+    const header = document.querySelector("#topnav"); 
+    ScrollTrigger.create({
+        trigger: "#customisation",  
+        start: "top top",  
+        end: "bottom center",  
+        onEnter: () => {
+            gsap.to(header, {
+                opacity: 0,
+                duration: 0.5
+            });
+        },
+        onLeaveBack: () => {
+            gsap.to(header, {
+                opacity: 1,
+                duration: 0.5
+            });
+        },
+        onEnterBack: () => {
+            gsap.to(header, {
+                opacity: 1,
+                duration: 0.5
+            });
+        },
+        onLeave: () => {
+            gsap.to(header, {
+                opacity: 0,
+                duration: 0.5
+            });
+        }
+    });
+});
 
   
   async function setupViewer() {

@@ -24,40 +24,40 @@
         </header>
         <!--Customisation section-->
         <section id="customisation">
-            <div id="customisation-header">
+          <div id="customisation-header">
               the perfect pair | Design Your Own
-            </div>
-            <div class="customisation-button">
-              <button class="button herobutton customisation-button" >Done Customising!</button>
-            </div>
+          </div>
+      
+          <!-- Canvas Section -->
+          <div id="web-canvas-container">
+              <!-- Done Customising Button -->
+              <button class="button herobutton customisation-button">Done Customising!</button>
+              <canvas id="web-canvas"></canvas>
+          </div>
           
-            <div id="customisation-3d">
-              <div id="web-canvas-container">
-                <canvas id="web-canvas"></canvas>
-              </div>
-              
-              <!-- Circle Button Container -->
-              <div class="circle-button-container">
-                <button class="circle-button colour-white selectedColour"></button>
-                <button class="circle-button colour-blue "></button>
-                <button class="circle-button colour-green"></button>
-                <button class="circle-button colour-yellow"></button>
-              </div>
-              
+          <!-- Circle Button Container -->
+          <div class="circle-button-container">
+              <button class="circle-button colour-white selectedColour"></button>
+              <button class="circle-button colour-blue"></button>
+              <button class="circle-button colour-green"></button>
+              <button class="circle-button colour-yellow"></button>
+          </div>
+          <!-- Controls Section -->
+          <div class="controls-section">
               <!-- Dropdown -->
               <div class="dropdown">
-                <button id="dropdownButton" class="button submitbutton dropbtn">Select Part of Shoe
-                  <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="12" viewBox="0 0 26 15" fill="none">
-                    <path d="M1.03049 1.56067L12.8091 13.3392L24.5876 1.56067"/>
-                  </svg>
-                  
-                </button>
-                <div class="dropdown-content" id="dropdownContent">
-                  <a class="whole" href="#">All</a>
-                  <a class="upper" href="#">Upper</a>
-                  <a class="sole" href="#">Sole & Lining</a>
-                  <a class="lace" href="#">Shoelace</a>
-                </div>
+                  <button id="dropdownButton" class="button submitbutton dropbtn">
+                      Select Part of Shoe
+                      <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="12" viewBox="0 0 26 15" fill="none">
+                          <path d="M1.03049 1.56067L12.8091 13.3392L24.5876 1.56067"/>
+                      </svg>
+                  </button>
+                  <div class="dropdown-content" id="dropdownContent">
+                      <a class="whole">All</a>
+                      <a class="upper">Upper</a>
+                      <a class="sole">Sole & Lining</a>
+                      <a class="lace">Shoelace</a>
+                  </div>
               </div>
               <script>
                 //drop down script
@@ -100,9 +100,17 @@
         dropdown.addEventListener('mouseleave', () => {
             dropdownContent.style.display = 'none';
         });
+        document.querySelector('.customisation-button').addEventListener('click', function() {
+    // Scroll to the bottom of the page smoothly
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth'
+    });
+});
               </script>
-            </div>
-          </section>
+          </div>
+      </section>
+      
 
         <div class="cta">
             <!--Left-aligned image-->
@@ -122,15 +130,15 @@
             <div id="inspiration-block">
             <div class="inspiration-div">
                 <img id="inspiration-image" src="style/black-shoes.png" alt="shoe transparent">
-                <p>Bla bla</p>
+                <p>Charcoal</p>
             </div>
             <div class="inspiration-div">
                 <img id="inspiration-image" src="style/green-shoes.png" alt="shoe transparent">
-                <p>Bla bla</p>
+                <p>Mint</p>
             </div>
             <div class="inspiration-div">
                 <img id="inspiration-image" src="style/blue-shoes.png" alt="shoe transparent">
-                <p>Bla bla</p>
+                <p>Mist</p>
             </div>
             </div>
             
