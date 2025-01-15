@@ -33,7 +33,7 @@ gsap.from(".usp-block", {
   stagger: 0.2, 
   scrollTrigger: {
     trigger: ".usp", 
-    start: "center center", 
+    start: "top center", 
     toggleActions: "play none none none", 
   },
 });
@@ -50,6 +50,18 @@ gsap.to(".banner", {
     },
   });
 
+  gsap.from(".colourways-container", {
+    x: 300, //right to left
+    opacity: 0, 
+    duration: 1.5, 
+    ease: "power3.out", 
+    scrollTrigger: {
+        trigger: ".colourways", 
+        start: "top center", 
+        end: "bottom center", 
+        toggleActions: "play none none none"
+    }
+});
 
 //   async function setupViewer() {
 //     const viewer = new ViewerApp({
