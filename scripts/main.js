@@ -16,6 +16,14 @@ import {
     Vector3,
   } from 'webgi';
   import * as THREE from 'three';
+  import { gsap } from "gsap";
+  import { _numWithUnitExp } from "gsap/gsap-core";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+
+  gsap.registerPlugin(ScrollTrigger);
+  console.log("Hello");
+
   
   async function setupViewer() {
     const viewer = new ViewerApp({
@@ -336,8 +344,14 @@ import {
       changingWhatPart ="lace";
       console.log(changingWhatPart);})
 
+
+
+
+      
+    }
+    setupViewer();
     
-  }
+
 
   
-  setupViewer();
+  

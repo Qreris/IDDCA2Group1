@@ -231,6 +231,7 @@ a{
 
 #hero-image{
     width: 550px;
+    height:50px;
     display: inline-block;
     margin: auto 0;
     margin-left: 200px;
@@ -308,6 +309,8 @@ a{
     color: white;
     padding-top: 400px;
     padding-bottom: 50px;
+    transform-origin: center center;
+    will-change: transform;
     cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="%2300C4B3" stroke="%23FFFFFF" stroke-width="1.5"></circle></svg>'), auto;
     }
 #banner-text{
@@ -340,6 +343,8 @@ a{
   display: inline-block;
   padding: 0 20px;
   margin: 0 30px;
+
+  
 }
 
 
@@ -368,14 +373,18 @@ a{
 }
 
 .colourways-container{
-  width: 830px;
+  width: 1700px;
   display: inline-block;
 }
 
 .colourways-block{
-  width: 25%;
-  padding-left: 65px;
+  width: 60%;
+  max-width: 500px;
+  height: 10%;
+  max-height: 500px;
+  
   display: inline-block;
+  background: transparent;
   text-align: center;
 }
 
