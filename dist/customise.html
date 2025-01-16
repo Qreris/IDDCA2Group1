@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>the perfect pair | Design Your Own</title>
+        
+        
+
+      <script type="module" crossorigin src="./assets/page1-22710dda.js"></script>
+      <link rel="modulepreload" crossorigin href="./assets/ScrollTrigger-a96b32c6.js">
+      <link rel="stylesheet" href="./assets/ScrollTrigger-f828c7a3.css">
+    </head>
+    <body>
+        <header id="topnav">
+            <div class="topnav-left">
+                <!--Left-aligned link-->
+                <a href="./index.html" class="navlink">Home</a>
+            </div>
+            <!--Centred logo-->
+            <div class="logo">
+                the perfect pair
+            </div>
+            <!--Right-aligned links-->
+            <div class="topnav-right">
+                <a href="#form-container" class="navlink">Pre-Order</a>
+                <a href="./customise.html" class="navlink">Customise</a>
+            </div>
+        </header>
+        <!--Customisation section-->
+        <section id="customisation">
+          <div id="customisation-header">
+              the perfect pair | Design Your Own
+          </div>
+      
+          <!-- Canvas Section -->
+          <div id="web-canvas-container">
+              <!-- Done Customising Button -->
+              <button class="button herobutton customisation-button">Done Customising!</button>
+              <canvas id="web-canvas"></canvas>
+          </div>
+          
+          <!-- Circle Button Container -->
+          <div class="circle-button-container">
+              <button class="circle-button colour-white selectedColour"></button>
+              <button class="circle-button colour-blue"></button>
+              <button class="circle-button colour-green"></button>
+              <button class="circle-button colour-yellow"></button>
+          </div>
+          <!-- Controls Section -->
+          <div class="controls-section">
+              <!-- Dropdown -->
+              <div class="dropdown">
+                  <button id="dropdownButton" class="button submitbutton dropbtn">
+                      Select Part of Shoe
+                      <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="12" viewBox="0 0 26 15" fill="none">
+                          <path d="M1.03049 1.56067L12.8091 13.3392L24.5876 1.56067"/>
+                      </svg>
+                  </button>
+                  <div class="dropdown-content" id="dropdownContent">
+                      <a class="whole">All</a>
+                      <a class="upper">Upper</a>
+                      <a class="sole">Sole & Lining</a>
+                      <a class="lace">Shoelace</a>
+                  </div>
+              </div>
+              <script>
+                //drop down script
+                const dropdownButton = document.querySelector('#dropdownButton');
+                const dropdownItems = document.querySelectorAll('.dropdown-content a');
+                const dropdownContent = document.querySelector('#dropdownContent');
+                const dropdown = document.querySelector('.dropdown');
+                
+                dropdownItems.forEach(item => {
+                  item.addEventListener('click', (event) => {
+                    event.preventDefault(); 
+                    const selectedText = item.textContent.trim(); 
+                    console.log('Selected Text:', selectedText);
+                    if (selectedText) {
+                        dropdownButton.textContent = selectedText; 
+                        dropdownButton.classList.add("whiteBGblackText");
+                        //dropdownButton.appendChild(document.querySelector('.arrow')); 
+                    } else {
+                        console.error('No text found for this item.');
+                    }
+                  });
+                });
+                dropdownContent.addEventListener('click', (event) => {
+                    if (event.target.tagName === 'A') {
+                    dropdownContent.style.display = 'none';
+                    
+                    dropdown.removeEventListener('mouseover', showDropdown);
+                        setTimeout(() => {
+                        dropdown.addEventListener('mouseover', showDropdown);
+                        }, 0);
+                    
+                    }
+                });
+
+            const showDropdown = () => {
+            dropdownContent.style.display = 'block';
+        };
+
+        dropdown.addEventListener('mouseover', showDropdown);
+        dropdown.addEventListener('mouseleave', () => {
+            dropdownContent.style.display = 'none';
+        });
+        document.querySelector('.customisation-button').addEventListener('click', function() {
+    // Scroll to the bottom of the page smoothly
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth'
+    });
+});
+              </script>
+          </div>
+      </section>
+      
+
+        <div class="cta">
+            <!--Left-aligned image-->
+            <div id="cta-img"><img id="cta-image" src="./assets/shoe-banner-849595cf.png" alt="shoe image"></div>
+            <!--Right-aligned text-->
+            <div id="cta-text">
+            <h2>your perfect pair is waiting!</h2>
+            <p>At the perfect pair, you get to mix, match, and play with endless hues to create shoes that are so you!
+                From bold pops to soft tones, the possibilities are as fun as they are limitless. </p>
+            </div>
+        </div>
+
+        <div id="inspiration">
+            <h3>be inspired by possible colourways!</h3>
+            <br>
+
+            <div id="inspiration-block">
+            <div class="inspiration-div">
+                <img id="inspiration-image" src="./assets/black-shoes-fa22a29f.png" alt="shoe transparent">
+                <p>Charcoal</p>
+            </div>
+            <div class="inspiration-div">
+                <img id="inspiration-image" src="./assets/green-shoes-ae58d8c7.png" alt="shoe transparent">
+                <p>Mint</p>
+            </div>
+            <div class="inspiration-div">
+                <img id="inspiration-image" src="./assets/blue-shoes-de2abb76.png" alt="shoe transparent">
+                <p>Mist</p>
+            </div>
+            </div>
+            
+            
+        </div>
+        </div>
+        <!--Newsletter sign up form-->
+        <!--Newsletter sign up form-->
+        <section id="form-container">
+            <h2 class="form-text">sign up for pre-order!</h2>
+            <p class="form-text"> Be the first to know about new customization options, exclusive discounts, and fresh style inspiration!<br>
+                Pre-order to take a step toward creating your perfect pair.</p>
+            <form>
+                <div class="name">
+                <label for="fname">First name:</label><br>
+                <input type="text" id="fname" name="fname" placeholder="e.g. John">
+                </div>
+                <div class="name" id="last-name">
+                <label for="lname">Last name:</label><br>
+                <input type="text" id="lname" name="lname" placeholder="e.g. Doe">  
+                </div>             
+                <br>
+                <label for="email">Email address:</label><br>
+                <input type="text" id="email" name="email" placeholder="e.g. johndoe@gmail.com">
+                <label for="phone">Phone number:</label><br>
+                <input type="text" id="phone" name="phone" placeholder="e.g. +65 1234 5678">
+                <label class="newsletter">I agree to receive promotional e-mails from the perfect pair.
+                    <input type="checkbox" checked="checked" value="'1">
+                    <span class="checkmark"></span>
+                </label>
+                <br>
+                <input type="submit" class="button submitbutton sign-up" value="Sign Up">
+            </form>
+        </section>
+        
+        <footer>
+            <hr>
+            <p id="copyright">© 2024 the perfect pair. All Rights Reserved</p>
+        </footer>
+        
+        
+		
+    </body>
+</html>
