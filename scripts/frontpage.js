@@ -33,22 +33,21 @@ gsap.from(".usp-block", {
   stagger: 0.2, 
   scrollTrigger: {
     trigger: ".usp", 
-    start: "top center", 
+    start: "center center", 
     toggleActions: "play none none none", 
   },
 });
 
 gsap.to(".banner", {
-    scale: 1.15,
-    duration: 1,
-    ease: "power2.out",
-    scrollTrigger: {
-      trigger: ".banner",
-      start: "top center",
-      end: "bottom center", 
-      scrub: true,
-    },
-  });
+  scale: 1.15,
+  duration: 1, 
+  ease: "linear", 
+  scrollTrigger: {
+    trigger: ".banner",
+    start: "top center",
+    once: true, 
+  },
+});
 
   gsap.from(".colourways-container", {
     x: 300, //right to left
@@ -57,7 +56,7 @@ gsap.to(".banner", {
     ease: "power3.out", 
     scrollTrigger: {
         trigger: ".colourways", 
-        start: "top center", 
+        start: "center center", 
         end: "bottom center", 
         toggleActions: "play none none none"
     }
