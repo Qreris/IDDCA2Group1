@@ -74,11 +74,11 @@ gsap.to(".banner", {
     
     viewer.renderer.refreshPipeline();
     //await viewer.setEnvironmentMap("./assets/autumn forest.hdr");
-    await viewer.load("./assets/Sneakers6.glb");
+    await viewer.load("./assets/SneakersHero.glb");
 
-    const model = await manager.addFromPath("./assets/Sneakers6.glb");
+    const model = await manager.addFromPath("./assets/SneakersHero.glb");
     
-    const object = scene.getObjectByName('SHOE_FINAL001');
+    const object = scene.getObjectByName('SHOE_HERO');
     if (object) {
         console.log('Object loaded:', object);
     } else {
@@ -87,7 +87,7 @@ gsap.to(".banner", {
   
     
     // Camera transform
-	  viewer.scene.activeCamera.position = new Vector3(15, 5, 30);
+	  viewer.scene.activeCamera.position = new Vector3(20, 2, 30);
 	  viewer.scene.activeCamera.target = new Vector3(0, 0, 0);
 
     // Camera options
@@ -97,22 +97,24 @@ gsap.to(".banner", {
     
     // Control options
     const controls = viewer.scene.activeCamera.controls;
-    controls.autoRotate = false;
-    controls.autoRotateSpeed = 1;
+    controls.autoRotate = true;
+    controls.autoRotateSpeed = .1;
     controls.enableDamping = true;
     controls.rotateSpeed = 2.0;
-    controls.enableZoom = true;
+    controls.enableZoom = false;
     controls.enablePan = false;
     controls.minDistance = 2;
-    controls.maxDistance = 8;
+    controls.maxDistance = 12;
+    controls.enableRotate = false;
     
-    const texture = manager.materials.findMaterialsByName('TEXTURE')[0];
+    const texture = manager.materials.findMaterialsByName('TEXTURE4')[0];
     if(texture){
       console.log("Found Texture");
     }
     else {
       console.warn("Didn't find texture");
     }
+    startTextureSwappingHero(manager, object);
 }
 setupViewer();
 
@@ -168,6 +170,49 @@ async function setupViewer2() {
     startTextureSwapping(manager, object);
     
 }
+function startTextureSwappingHero(manager, object) {
+  const textures = [
+      './assets/textures/BBB.png',
+      './assets/textures/GGG.png',
+      './assets/textures/YYY.png',
+      './assets/textures/WWW.png',
+      './assets/textures/WBW.png',
+      './assets/textures/BWB.png',
+      './assets/textures/GWG.png',
+      './assets/textures/WGW.png',
+      './assets/textures/YWY.png',
+      './assets/textures/WYW.png',
+      './assets/textures/BWY.png',
+      './assets/textures/BWG.png',
+      './assets/textures/YYW.png',
+      './assets/textures/BBW.png',
+      './assets/textures/GGW.png',
+      './assets/textures/WYW.png',
+      './assets/textures/WWB.png',
+      './assets/textures/WWY.png',
+      './assets/textures/WWG.png',
+      './assets/textures/WBW.png',
+      './assets/textures/WGW.png',
+      './assets/textures/BWW.png',
+      './assets/textures/GWW.png',
+
+
+  ];
+
+  setInterval(async () => {
+      const randomTextureIndex = Math.floor(Math.random() * textures.length);
+      const randomTexturePath = textures[randomTextureIndex];
+
+      const textureLoader = new THREE.TextureLoader();
+      const randomTexture = await textureLoader.loadAsync(randomTexturePath);
+
+      if (object && object.material) {
+          object.material.map = randomTexture;
+          object.material.needsUpdate = true;
+          console.log(`Texture swapped to: ${randomTexturePath}`);
+      }
+  }, 400); 
+}//.2 seconds
 function startTextureSwapping(manager, object) {
     const textures = [
         './assets/textures/CCC.png',

@@ -239,7 +239,7 @@
 } */
 
 
-/* @keyframes fadeDrop {
+@keyframes fadeDrop {
   0% {
     opacity: 0;
     transform: translateY(-50px); 
@@ -248,7 +248,7 @@
     opacity: 1;
     transform: translateY(0);
   }
-} */
+}
 
 
 #start3d {

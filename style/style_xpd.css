@@ -230,11 +230,12 @@ a{
 }
 
 #hero-image{
-    width: 550px;
-    height:50px;
+    width: 700px;
+    height:700px;
     display: inline-block;
-    margin: auto 0;
-    margin-left: 200px;
+    position: absolute;
+    top: 50px;
+    right: 10px;
 }
 
 #hero-png{
